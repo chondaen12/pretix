@@ -497,7 +497,6 @@ ROOT_URLCONF = 'pretix.multidomain.maindomain_urlconf'
 WSGI_APPLICATION = 'pretix.wsgi.application'
 
 USE_I18N = True
-USE_L10N = True
 USE_TZ = True
 
 LOCALE_PATHS = [
