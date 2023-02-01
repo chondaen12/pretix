@@ -150,17 +150,10 @@ setup(
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
         'Environment :: Web Environment',
         'License :: OSI Approved :: GNU Affero General Public License v3',
-<<<<<<< HEAD
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
-        'Framework :: Django :: 3.2'
-=======
-        'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: 3.9',
-        'Programming Language :: Python :: 3.10',
         'Framework :: Django :: 4.0'
->>>>>>> 1ca47a8ed (Fix a check and CI)
     ],
 
     keywords='tickets web shop ecommerce',
