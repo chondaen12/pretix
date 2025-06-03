@@ -1880,3 +1880,27 @@ class StripeMobilePay(StripeRedirectMethod):
                 "type": "mobilepay",
             },
         }
+
+class StripePromptpay(StripeRedirectMethod):
+    identifier = 'stripe_promptpay'
+    verbose_name = _('Promptpay via Stripe')
+    public_name = _('Promptpay')
+    method = 'promptpay'
+    confirmation_method = 'automatic'
+    explanation = _(
+        'This payment method is available to users of the Thai Mobile Banking - Promptpay. Please have your app '
+        'ready.'
+    )
+
+    def _payment_intent_kwargs(self, request, payment):
+        return {
+            "payment_method_data": {
+                "type": "promptpay",
+            },
+            "payment_method_options": {
+                "promptpay": {
+                    "reference": payment.order.full_code,
+                },
+            }
+        }
+
