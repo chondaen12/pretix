@@ -1,4 +1,4 @@
-#
+
 # This file is part of pretix (Community Edition).
 #
 # Copyright (C) 2014-2020 Raphael Michel and contributors
@@ -595,14 +595,14 @@ class ScaView(StripeOrderView, View):
 
         if intent.status == 'requires_action' and intent.next_action.type in [
             'use_stripe_sdk', 'redirect_to_url', 'alipay_handle_redirect', 'wechat_pay_display_qr_code',
-            'swish_handle_redirect_or_display_qr_code', 'multibanco_display_details',
+            'swish_handle_redirect_or_display_qr_code', 'multibanco_display_details', 'promptpay_display_qr_code'
         ]:
             ctx = {
                 'order': self.order,
                 'stripe_settings': StripeSettingsHolder(self.order.event).settings,
             }
             ctx['payment_intent_action_type'] = intent.next_action.type
-            if intent.next_action.type in ('use_stripe_sdk', 'alipay_handle_redirect', 'wechat_pay_display_qr_code'):
+            if intent.next_action.type in ('use_stripe_sdk', 'alipay_handle_redirect', 'wechat_pay_display_qr_code', 'promptpay_display_qr_code'):
                 ctx['payment_intent_client_secret'] = intent.client_secret
             elif intent.next_action.type == 'redirect_to_url':
                 ctx['payment_intent_next_action_redirect_url'] = intent.next_action.redirect_to_url['url']
