@@ -19,8 +19,8 @@
 # You should have received a copy of the GNU Affero General Public License along with this program.  If not, see
 # <https://www.gnu.org/licenses/>.
 #
-import json
 from collections import OrderedDict
+import json
 
 from django import forms
 from django.dispatch import receiver
